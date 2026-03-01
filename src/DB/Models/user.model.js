@@ -25,7 +25,10 @@ const userSchema = new mongoose.Schema({
         }
     },
     DOB:Date,
-        phone: String,
+
+     phone:{
+        type: String,
+    },
 
     role:{
         type: Number,
