@@ -15,7 +15,10 @@ export const encrypt = async (text) => {
 
 }
 export const decrypt = async (encryptedData) => {
-
+   if (!encryptedData) {
+       throw new Error('No encrypted data provided');
+   }
+   
    const [iv,encryptedText]=encryptedData.split(":");
    const binaryLike=Buffer.from(iv,"hex");
    const decipher=crypto.createDecipheriv("aes-256-cbc", ENCRYPTION_SECRET_KEY,binaryLike);

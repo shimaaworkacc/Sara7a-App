@@ -19,7 +19,7 @@ export const signup = async (req, res) => {
 
     const user = await create({
         model: userModel, data: [
-            { firstName, lastName, email, password: hashedPassword,encryptedData }
+            { firstName, lastName, email, password: hashedPassword, phone: encryptedData }
         ]
     });
     return SuccessResponse({ res, statusCode: 201, message: "User created successfully", data: { user } })
